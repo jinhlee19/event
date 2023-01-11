@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import PostItem from "@/components/PostItem";
-import { API_URL } from "@/config";
+import { API_URL } from "../../config";
 
 export default function showcasePage({ posts }) {
   return (
@@ -13,7 +13,6 @@ export default function showcasePage({ posts }) {
             <PostItem key={post.id} post={post} />
           ))}
         </div>
-        API_URL
       </section>
       <div className="mx-auto flex justify-center">
         <button className="btn btn--blue">Show More</button>
