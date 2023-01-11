@@ -1,6 +1,6 @@
+import EventItem from "@/components/EventItem";
 import Layout from "@/components/Layout";
 import { API_URL } from "../config";
-
 export default function LandingPage({ events }) {
   return (
     <Layout>
@@ -8,8 +8,8 @@ export default function LandingPage({ events }) {
       <section className="card-container px-16 w-full">
         <div className="columns-1 md:columns-2 lg:columns-4 ">
           {events.length === 0 && <div>No event To Show</div>}
-          {events.map((event) => (
-            <eventItem key={event.id} event={event} />
+          {events.map((evt) => (
+            <EventItem key={evt.id} event={evt} />
           ))}
         </div>
       </section>
@@ -25,7 +25,6 @@ export async function getServerSideProps() {
   const events = await res.json();
 
   return {
-    props: { events },
-    // props: { events: events.slice(0, 4) },
+    props: { events: events.slice(0, 8) },
   };
 }

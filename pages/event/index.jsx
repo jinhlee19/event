@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 
-export default function eventttPage() {
+export default function eventPage() {
   return (
     <Layout>
       <h3>Fashion Lifestyle</h3>

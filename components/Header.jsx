@@ -11,9 +11,16 @@ export default function Header() {
       <div className="flex justify-between items-center">
         <nav className="navigation mr-16">
           <ul className="nav__item flex space-x-6 uppercase lg-text">
-            <li>All</li>
-            <li>Series</li>
-            <li>Agency</li>
+            <li>
+              <Link href="">
+                <a>Showcase</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="">
+                <a>Events</a>
+              </Link>
+            </li>
           </ul>
         </nav>
         <ThemeToggler />

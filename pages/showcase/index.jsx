@@ -1,3 +1,4 @@
+import EventItem from "@/components/EventItem";
 import Layout from "@/components/Layout";
 import { API_URL } from "../../config";
 
@@ -9,7 +10,7 @@ export default function showcasePage({ events }) {
         <div className="columns-1 md:columns-2 lg:columns-4 ">
           {events.length === 0 && <div>No event To Show</div>}
           {events.map((event) => (
-            <eventItem key={event.id} event={event} />
+            <EventItem key={event.id} event={event} />
           ))}
         </div>
       </section>

@@ -2,7 +2,7 @@ const { events } = require("../data.json");
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (req, res) => {
-  const event = events.filter((content) => content.slug === req.query.slug);
+  const event = events.filter((evt) => evt.slug === req.query.slug);
   if (req.method === "GET") {
     res.status(200).json(event);
   } else {
