@@ -2,14 +2,14 @@ import Layout from "@/components/Layout";
 import { API_URL } from "../../config";
 
 export default function showcasePage({ events }) {
-  return (eventevent
+  return (
     <Layout>
       {/* <div className="card-container grid lg:grid-cols-4"> */}
       <section className="card-container px-16 w-full">
         <div className="columns-1 md:columns-2 lg:columns-4 ">
           {events.length === 0 && <div>No event To Show</div>}
           {events.map((event) => (
-           eventstItem key={event.id} event={event} />
+            <eventItem key={event.id} event={event} />
           ))}
         </div>
       </section>

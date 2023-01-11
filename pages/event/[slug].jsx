@@ -8,7 +8,7 @@ export default function EventPage({ event }) {
       <section className="flex flex-col justify-center items-center space-y-12 px-16">
         <Image src={event.imageUrl} alt="" width={960} height={600} />
         <h4 className="card__subtitle text-sky-500 text-sm">
-          {eveventcategory}
+          {event.category}
         </h4>
         <h1>{event.title}</h1>
         <div className="flex justify-center pb-4">
