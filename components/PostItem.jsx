@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-export default function PostItem({ post }) {
-  const { title, category, imageUrl, slug, time } = post;
+export default function eventItem({ event }) {
+  const { title, category, imageUrl, slug, time } = event;
   return (
-    <Link href={`/posts/${slug}`}>
+    <Link href={`/events/${slug}`}>
       <div className="card mb-8 w-72 text-center space-y-4 py-8 cursor-pointer">
         <figure className="w-72 h-full relative mb-4 ">
           <Image

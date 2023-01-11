@@ -1,16 +1,15 @@
 import Layout from "@/components/Layout";
-import PostItem from "@/components/PostItem";
 import { API_URL } from "../config";
 
-export default function LandingPage({ posts }) {
+export default function LandingPage({ events }) {
   return (
     <Layout>
       {/* <div className="card-container grid lg:grid-cols-4"> */}
       <section className="card-container px-16 w-full">
         <div className="columns-1 md:columns-2 lg:columns-4 ">
-          {posts.length === 0 && <div>No post To Show</div>}
-          {posts.map((post) => (
-            <PostItem key={post.id} post={post} />
+          {events.length === 0 && <div>No event To Show</div>}
+          {events.map((event) => (
+            <eventItem key={event.id} event={event} />
           ))}
         </div>
       </section>
@@ -22,11 +21,11 @@ export default function LandingPage({ posts }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`${API_URL}/api/posts`);
-  const posts = await res.json();
+  const res = await fetch(`${API_URL}/api/events`);
+  const events = await res.json();
 
   return {
-    props: { posts },
-    // props: { posts: posts.slice(0, 4) },
+    props: { events },
+    // props: { events: events.slice(0, 4) },
   };
 }
