@@ -2,7 +2,8 @@ export default function Footer() {
   return (
     <footer>
       <div>
-        <p>This is a footer line</p>
+        <p>ⓒDShine 2023. All rights reserved.</p>
+        <address></address>
       </div>
     </footer>
   );
