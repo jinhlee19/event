@@ -15,28 +15,28 @@ export default function Header() {
           <ul className="nav__item flex justify-between items-center">
             <li>
               <Link href="">
-                <a>완료 프로젝트</a>
+                <a>Get Shit Done</a>
               </Link>
             </li>
             <li>
               <Link href="/events">
-                <a>진행 프로젝트</a>
+                <a>In Progress</a>
               </Link>
             </li>
             <li>
               <Link href="/events">
-                <a>팀원모집 중</a>
+                <a>Crew Wanted</a>
               </Link>
             </li>
             <li>
               <Link href="/events">
-                <a>CR 리뷰</a>
+                <a>CR Review</a>
               </Link>
             </li>
 
-            <li className="btn w-28 justify-center flex dark:bg-white dark:text-primary-darker font-semibold bg-primary-darker text-white">
+            <li className="btn px-6 justify-center flex dark:bg-white dark:text-primary-darker font-semibold bg-primary-darker text-white">
               <Link href="/">
-                <a>같이가요!</a>
+                <a>Hell Gate</a>
               </Link>
             </li>
           </ul>
