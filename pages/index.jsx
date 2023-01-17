@@ -20,11 +20,23 @@ export default function LandingPage({ events }) {
   );
 }
 
+// export async function getServerSideProps() {
+//   const res = await fetch(`${API_URL}/api/events?populate=*`);
+//   const events = await res.json().data;
+
+//   return {
+//     props: { events: events.slice(0, 4) },
+//   };
+// }
+
 export async function getServerSideProps() {
   const res = await fetch(`${API_URL}/api/events?populate=*`);
-  const events = await res.json().data;
-
+  const json = await res.json();
+  const events = json.data;
   return {
-    props: { events: events.slide(0, 4) },
+    props: { events },
   };
+  // return {
+  //   props: { events: events.slice(0, 4) },
+  // };
 }
