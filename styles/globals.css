@@ -31,10 +31,10 @@
     @apply font-sans text-text-dark dark:text-text-lighter text-base;
   }
   h1 {
-    @apply text-3xl;
+    @apply text-5xl font-extrabold;
   }
   h2 {
-    @apply text-lg leading-6;
+    @apply text-3xl leading-6 font-semibold;
   }
   h3 {
     @apply text-sm uppercase;
@@ -83,5 +83,11 @@
   }
   .divider--sm {
     @apply border border-border-default;
+  }
+  .nav__item {
+    @apply flex space-x-12 uppercase lg-text font-semibold dark:font-medium;
+  }
+  .subtitle {
+    @apply text-lg uppercase;
   }
 }

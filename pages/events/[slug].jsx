@@ -2,7 +2,8 @@ import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 import Image from "next/image";
 export default function EventPage({ event }) {
-  const { image, title, venue, time, content, description } = event.attributes;
+  const { image, title, venue, date, time, content, description } =
+    event.attributes;
 
   return (
     <Layout>
@@ -10,8 +11,8 @@ export default function EventPage({ event }) {
         <Image
           src={image.data.attributes.formats.medium.url}
           alt=""
-          width={300}
-          height={400}
+          width={600}
+          height={800}
         />
         <h4 className="card__subtitle text-sky-500 text-sm">{venue}</h4>
         <h1>{title}</h1>
@@ -19,7 +20,9 @@ export default function EventPage({ event }) {
           <hr className="divider--sm w-8 " />
         </div>
         <p>{description}</p>
-        <time>{time}</time>
+        <time>
+          {new Date(date).toLocaleDateString("en-US")} {time}
+        </time>
         <p>{content}</p>
       </section>
       <div className="text-center my-12">

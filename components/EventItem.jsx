@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function EventItem({ event }) {
-  const { name, venue, image, slug, time } = event.attributes;
-  console.log(image.data.attributes.formats.medium.url);
+  const { name, venue, image, slug, time, date } = event.attributes;
+
   return (
     <Link href={`/events/${slug}`}>
       <div className="card mb-8 w-72 text-center space-y-4 py-8 cursor-pointer">
@@ -24,7 +24,9 @@ export default function EventItem({ event }) {
         <div className="flex justify-center pb-4">
           <hr className="divider--sm w-8" />
         </div>
-        <time>{time}</time>
+        <time>
+          {new Date(date).toLocaleDateString("en-US")} {time}
+        </time>
       </div>
     </Link>
   );
