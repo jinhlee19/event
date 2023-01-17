@@ -5,7 +5,7 @@ export default function Header() {
     <header className="hearder flex justify-between items-center mx-auto p-16">
       <div className="logo uppercase font-semibold text-lg lg:text-3xl font-sans">
         <Link href="/">
-          <a>crossroads</a>
+          <a>crossroad</a>
         </Link>
       </div>
       <div className="flex justify-between items-center">

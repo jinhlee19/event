@@ -81,4 +81,7 @@
   .btn--gray {
     @apply border-gray-800  text-gray-400  hover:bg-gray-800 hover:text-gray-200;
   }
+  .divider--sm {
+    @apply border border-border-default;
+  }
 }
