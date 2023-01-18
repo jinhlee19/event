@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Search from "./Search";
 import ThemeToggler from "./ThemeToggler";
 export default function Header() {
   return (
@@ -14,7 +15,15 @@ export default function Header() {
         <nav className="navigation mr-16 ">
           <ul className="nav__item flex justify-between items-center">
             <li>
-              <Link href="">
+              <Link href="/events/search">
+                <a>
+                  {/* <IoSearchOutline className="w-6 h-6" /> */}
+                  <Search />
+                </a>
+              </Link>
+            </li>
+            {/* <li>
+              <Link href="/showcase">
                 <a>Get Shit Done</a>
               </Link>
             </li>
@@ -27,13 +36,23 @@ export default function Header() {
               <Link href="/events">
                 <a>Crew Wanted</a>
               </Link>
+            </li> 
+            <li>
+              <Link href="/events">
+                <a>CR Review</a>
+              </Link>
+            </li>
+            */}
+            <li>
+              <Link href="/events">
+                <a>Showcase</a>
+              </Link>
             </li>
             <li>
               <Link href="/events">
                 <a>CR Review</a>
               </Link>
             </li>
-
             <li className="btn px-6 justify-center flex dark:bg-white dark:text-primary-darker font-semibold bg-primary-darker text-white">
               <Link href="/">
                 <a>Hell Gate</a>

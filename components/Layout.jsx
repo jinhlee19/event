@@ -11,7 +11,8 @@ export default function Layout({ title, keyword, description, children }) {
         <meta name="keyword" content={keyword} />
       </Head>
       <Header />
-      {children}
+      <div className="px-16">{children}</div>
+
       <Footer />
     </div>
   );
