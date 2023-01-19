@@ -15,12 +15,8 @@ export default function Header() {
         <nav className="navigation mr-16 ">
           <ul className="nav__item flex justify-between items-center">
             <li>
-              <Link href="/events/search">
-                <a>
-                  {/* <IoSearchOutline className="w-6 h-6" /> */}
-                  <Search />
-                </a>
-              </Link>
+              {/* <IoSearchOutline className="w-6 h-6" /> */}
+              <Search />
             </li>
             {/* <li>
               <Link href="/showcase">

@@ -12,16 +12,17 @@ export default function Search() {
   };
 
   return (
-    <div className="search flex space-x-4">
-      <form
-        action=""
-        onSubmit={handleSubmit}
+    <form onSubmit={handleSubmit} className="flex space-x-4 items-center">
+      <input
+        type="text"
         onChange={(e) => setTerm(e.target.value)}
-        className="flex space-x-4"
-      >
-        <input type="on-submit" />
-        <IoSearchOutline className="w-6 h-6" />
-      </form>
-    </div>
+        placeholder="Search Events"
+        className="px-4 py-2"
+      />
+      <IoSearchOutline
+        onClick={handleSubmit}
+        className="w-6 h-6 cursor-pointer"
+      />
+    </form>
   );
 }
