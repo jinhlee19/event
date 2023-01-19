@@ -40,7 +40,8 @@ export default function AddEventPage() {
       toast.error("에러에러에러");
     } else {
       const evt = await res.json();
-      router.push(`/events/${evt.slug}`);
+      console.log(evt);
+      router.push(`/events/${evt.data.attributes.slug}`);
     }
   };
 
