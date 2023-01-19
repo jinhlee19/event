@@ -90,4 +90,8 @@
   .subtitle {
     @apply text-lg uppercase;
   }
+
+  .input--1 {
+    @apply py-1 px-4 mx-4 border-b border-white bg-gray-900;
+  }
 }

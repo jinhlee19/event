@@ -25,7 +25,7 @@ export async function getServerSideProps({ query: { term } }) {
     {
       filters: {
         $or: [
-          { name: { $containsi: term } },
+          { title: { $containsi: term } },
           { description: { $containsi: term } },
           { venue: { $containsi: term } },
         ],

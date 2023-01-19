@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function EventItem({ event }) {
-  const { name, venue, image, slug, time, date } = event.attributes;
+  const { title, image, slug, time, date, category } = event.attributes;
 
   return (
     <Link href={`/events/${slug}`}>
@@ -19,8 +19,8 @@ export default function EventItem({ event }) {
             />
           </div>
         </figure>
-        <h4 className="card__subtitle text-sky-500">{venue}</h4>
-        <h2 className="card__title">{name}</h2>
+        <h4 className="card__subtitle text-sky-500">{category}</h4>
+        <h2 className="card__title">{title}</h2>
         <div className="flex justify-center pb-4">
           <hr className="divider--sm w-8" />
         </div>
