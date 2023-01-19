@@ -1,9 +1,12 @@
 import Layout from "@/components/Layout";
-
+import { API_URL } from "@/config/index";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+API_URL;
 
-export default function AddeventPage() {
+export default function AddEventPage() {
   const router = useRouter();
   const [values, setValues] = useState({
     title: "",
@@ -14,10 +17,33 @@ export default function AddeventPage() {
     organizer: "",
     description: "",
   });
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("object");
+    // console.log("object");
+    // * 유효성검사
+    const hasEmptyFields = Object.values(values).some(
+      (element) => element === ""
+    );
+    if (hasEmptyFields) {
+      toast.error("정보를 입력해주세요.");
+    }
+
+    // * 폼 POST
+    const res = await fetch(`${API_URL}/api/events`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ data: values }),
+    });
+    if (!res.ok) {
+      toast.error("에러에러에러");
+    } else {
+      const evt = await res.json();
+      router.push(`/events/${evt.slug}`);
+    }
   };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
@@ -25,16 +51,21 @@ export default function AddeventPage() {
 
   return (
     <Layout title="Add New event">
-      <div className="max-w-5xl mx-auto space-y-8 h-100v">
+      <div className="max-w-5xl mx-auto space-y-8 h-70v">
         <div className="flex justify-between items-center">
           <h1>이벤트 추가하기</h1>
+          <ToastContainer />
           <button type="submit" className="btn btn--lg" onClick={handleSubmit}>
             이벤트 만들기
           </button>
         </div>
-        <form action="" onSubmit={handleSubmit} className="event-add py-6">
-          <div className="addform grid gap-8">
-            <div className="input  ">
+        <form
+          action=""
+          onSubmit={handleSubmit}
+          className="event-add py-6 justify-center "
+        >
+          <div className="add-form flex flex-col space-y-8">
+            <div className="add-form__input">
               <label htmlFor="title">이벤트 이름</label>
               <input
                 type="text"
@@ -67,7 +98,55 @@ export default function AddeventPage() {
                 className="input--1"
               />
             </div>
+            <div className="input">
+              <label htmlFor="organizer">주최</label>
+              <input
+                type="text"
+                id="organizer"
+                name="organizer"
+                value={values.organizer}
+                onChange={handleInputChange}
+                className="input--1"
+              />
+            </div>
+            <div className="input">
+              <label htmlFor="date">일시</label>
+              <input
+                type="date"
+                id="date"
+                name="date"
+                value={values.date}
+                onChange={handleInputChange}
+                className="input--1"
+              />
+            </div>
+            <div className="input">
+              <label htmlFor="time">시간</label>
+              <input
+                type="text"
+                id="time"
+                name="time"
+                value={values.time}
+                onChange={handleInputChange}
+                className="input--1"
+              />
+            </div>
+
+            <div className="">
+              <label htmlFor="description" className="label">
+                Event Description
+              </label>
+              <textarea
+                type="text"
+                name="description"
+                id="description"
+                value={values.description}
+                onChange={handleInputChange}
+                className="textarea input--1"
+              ></textarea>
+            </div>
           </div>
+          <input type="submit" value="Add Event" className="btn" />
         </form>
       </div>
     </Layout>

@@ -39,19 +39,19 @@ export default function Header() {
               </Link>
             </li>
             */}
-            <li>
-              <Link href="/events">
-                <a>Showcase</a>
+            {/* <li>
+              <Link href="/events/search">
+                <a>검색</a>
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/events">
-                <a>CR Review</a>
+                <a>이벤트보기</a>
               </Link>
             </li>
             <li className="btn px-6 justify-center flex dark:bg-white dark:text-primary-darker font-semibold bg-primary-darker text-white">
-              <Link href="/">
-                <a>Hell Gate</a>
+              <Link href="/events/add">
+                <a>이벤트 주최하기</a>
               </Link>
             </li>
           </ul>

@@ -31,6 +31,7 @@ export default function EventPage({ event }) {
     </Layout>
   );
 }
+
 export async function getServerSideProps({ query: { slug } }) {
   const res = await fetch(
     `${API_URL}/api/events?filters[slug]=${slug}&populate=*`
