@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-API_URL;
 
 export default function EditEventPage({ event }) {
   const {
@@ -16,8 +16,8 @@ export default function EditEventPage({ event }) {
     time,
     description,
     slug,
-  } = event.data.attributes;
-  console.log(event);
+  } = event.attributes;
+
   const router = useRouter();
   const [values, setValues] = useState({
     title: title,
@@ -43,7 +43,7 @@ export default function EditEventPage({ event }) {
 
     // * 폼 POST
     const res = await fetch(`${API_URL}/api/events`, {
-      method: "POST",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -171,8 +171,7 @@ export async function getServerSideProps({ params: { id } }) {
   const res = await fetch(`${API_URL}/api/events/${id}?populate=*`);
   const json = await res.json();
   const event = await json.data;
-  console.log(event);
   return {
-    props: event,
+    props: { event },
   };
 }
