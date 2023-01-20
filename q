@@ -1,0 +1,113 @@
+[33mcommit 063d1d682986c14715a92719fa205a3bfb268b1a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Fri Jan 20 07:46:35 2023 +0900
+
+    ***TROUBLE SHOOTING - Slug
+
+[33mcommit 7ca1912f44923d4ee8803bb9293895876cdd486e[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Fri Jan 20 07:33:55 2023 +0900
+
+    error
+
+[33mcommit ab71d138cb549ce65b01b3adb4c0fbbce34c63e8[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Fri Jan 20 04:29:25 2023 +0900
+
+    field
+
+[33mcommit a76150742aa663fe096abcf43f8c886838e5dcff[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Thu Jan 19 15:01:35 2023 +0900
+
+    **Checkpoint - Events or Portfolio Service - Events Proceed at this moment
+
+[33mcommit 718f77b65212bd1f81b88a9d2667964bad870c86[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Thu Jan 19 04:10:25 2023 +0900
+
+    Feat: Search Action, qs, router
+
+[33mcommit 52347a4c32faf81e3511ea24bd8599d982195cfe[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Wed Jan 18 08:53:17 2023 +0900
+
+    Eng
+
+[33mcommit 3e1d7e4b54d53dbb169c9a3a6a39ad2ed9bebdea[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Wed Jan 18 08:47:01 2023 +0900
+
+    한글버전
+
+[33mcommit 3f2cb202d3cafd23b0212a21733c795e943f292a[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Wed Jan 18 06:46:24 2023 +0900
+
+    Feat: Slug Add
+
+[33mcommit 21da3d20bbb7fcbab60e8a49656e1ad7f5c4bf1b[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Wed Jan 18 06:04:45 2023 +0900
+
+    Feat: settle
+
+[33mcommit 59cc063c198dc373e816adfef3fe8f31d85889dc[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Wed Jan 18 04:17:03 2023 +0900
+
+    Feat: Image Error
+
+[33mcommit 7c395e178bcb73e2988646ca110a17dcf0effd33[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Wed Jan 18 02:59:42 2023 +0900
+
+    checkpoint switching to strapi 1
+
+[33mcommit 6ae2285587e5ae7a209893232e9b3893b433e063[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Fri Jan 13 23:29:46 2023 +0900
+
+    .
+
+[33mcommit 6ca3e79872dd35d1df664dd3275ff5a40c298663[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Fri Jan 13 19:18:25 2023 +0900
+
+    .
+
+[33mcommit 6574fb160aa8676170669fc848641cbaf3659031[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Thu Jan 12 05:51:37 2023 +0900
+
+    .
+
+[33mcommit e4e2fafdf944b4a4467f783807961bd47aba0f28[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Thu Jan 12 00:01:30 2023 +0900
+
+    .
+
+[33mcommit 0fc96a9f9cc120bc7b93c061d9f434ec80b40480[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Wed Jan 11 23:58:59 2023 +0900
+
+    post to events
+
+[33mcommit 29e18e50d90e3bc341ff41028e113b5d56537275[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Wed Jan 11 23:55:27 2023 +0900
+
+    @경로 안먹힘
+
+[33mcommit 418b9f7dee01bd77efdd73b87f4fce598c608ce1[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Wed Jan 11 23:52:01 2023 +0900
+
+    err
+
+[33mcommit 0ecb7e7123d9d9713986d10c037c225d2feb6d35[m
+Author: jinhlee19 <jinhlee19@gmail.com>
+Date:   Tue Jan 10 21:44:32 2023 +0900
+
+    first commit
