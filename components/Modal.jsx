@@ -22,8 +22,6 @@
 //   }
 // }
 
-// //https://devrecipes.net/modal-component-with-next-js/
-
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 

@@ -1,3 +1,4 @@
+import ImageUpload from "@/components/ImageUpload";
 import Layout from "@/components/Layout";
 import Modal from "@/components/Modal";
 import { API_URL } from "@/config/index";
@@ -73,6 +74,10 @@ export default function EditEventPage({ event }) {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
+  };
+
+  const ImageUploaded = (e) => {
+    console.log("uploaded");
   };
 
   return (
@@ -193,7 +198,7 @@ export default function EditEventPage({ event }) {
         </div>
       </div>
       <Modal show={showModal} onClose={() => setShowModal(false)}>
-        <h1>Modal Upload</h1>
+        <ImageUpload evtId={event.id} ImageUploaded={ImageUploaded} />
       </Modal>
     </Layout>
   );

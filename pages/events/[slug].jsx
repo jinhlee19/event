@@ -50,12 +50,17 @@ export default function EventPage({ event }) {
         >
           삭제하기
         </button>
-        <button className="btn bg-background-dark rounded-md uppercase">
+        <button
+          className="btn bg-background-dark rounded-md uppercase"
+          onClick={() => router.push(`edit/${event.id}`)}
+        >
           편집하기
         </button>
       </div>
       <div className="text-center my-12">
-        <button className="btn btn--red">Go Back</button>
+        <button className="btn btn--red" onClick={() => router.push(`/events`)}>
+          Go Back
+        </button>
       </div>
     </Layout>
   );

@@ -14,7 +14,7 @@ export default function Header() {
       <div className="flex justify-between items-center">
         <nav className="navigation mr-16 ">
           <ul className="nav__item flex justify-between items-center">
-            <li>
+            <li className="hidden xl:block">
               {/* <IoSearchOutline className="w-6 h-6" /> */}
               <Search />
             </li>
@@ -44,12 +44,12 @@ export default function Header() {
                 <a>검색</a>
               </Link>
             </li> */}
-            <li>
+            <li className="hidden xl:block">
               <Link href="/events">
                 <a>이벤트보기</a>
               </Link>
             </li>
-            <li className="btn px-6 justify-center flex dark:bg-white dark:text-primary-darker font-semibold bg-primary-darker text-white">
+            <li className="hidden xl:flex btn px-6 justify-center dark:bg-white dark:text-primary-darker font-semibold bg-primary-darker text-white">
               <Link href="/events/add">
                 <a>이벤트 주최하기</a>
               </Link>
