@@ -20,6 +20,7 @@ export default function EditEventPage({ event }) {
     time,
     description,
     slug,
+    category,
   } = event.attributes;
 
   const router = useRouter();
@@ -33,12 +34,15 @@ export default function EditEventPage({ event }) {
     description: description,
     slug: slug,
     image: image,
+    category: category,
   });
 
   const [imagePreview, setImagePreview] = useState(
     image.data ? image.data.attributes.formats.thumbnail.url : null
   );
-  useEffect(() => {}, [imagePreview]);
+  useEffect(() => {
+    console.log(imagePreview);
+  }, [imagePreview]);
 
   // * 모달
   const [showModal, setShowModal] = useState(false);
@@ -66,8 +70,8 @@ export default function EditEventPage({ event }) {
       toast.error("에러에러에러");
     } else {
       const evt = await res.json();
-      console.log(evt);
-      router.push(`/events/${evt.data.attributes.slug}`);
+      // console.log(evt);
+      router.push(`/events/${event.data.attributes.slug}`);
     }
   };
 
@@ -76,14 +80,17 @@ export default function EditEventPage({ event }) {
     setValues({ ...values, [name]: value });
   };
 
-  const ImageUploaded = async (e) => {
+  const ImageUploaded = async () => {
     const res = await fetch(
       // `${API_URL}/api/events?filters[id]id=${evt.id}&populate=*`
-      `${API_URL}/api/events/${evt.id}?populate=*`
+      `${API_URL}/api/events/${event.id}?populate=*`
     );
-    const data = await res.json();
-    setImagePreview(data.image.data.attributes.formats.medium.url);
-    console.log(data.image.data.attributes.formats.medium.url);
+    const { data } = await res.json();
+    console.log(`Logger :`, data);
+    // if (data.attributes.image.data != null) {
+    setImagePreview(data.attributes.image.data.attributes.formats.medium.url);
+    // }
+
     setShowModal(false);
   };
 
@@ -110,7 +117,7 @@ export default function EditEventPage({ event }) {
                 id="title"
                 name="title"
                 value={values.title}
-                onChange={handleInputChange}
+                onChange={handleInputChange} // 온체인지는 트리거가 걸려있고, e로 받아내서 ()=>같은 함수 표시 필요없음
                 className="input--1"
               />
             </div>
@@ -205,7 +212,7 @@ export default function EditEventPage({ event }) {
         </div>
       </div>
       <Modal show={showModal} onClose={() => setShowModal(false)}>
-        <ImageUpload evtId={event.id} ImageUploaded={ImageUploaded} />
+        <ImageUpload evtId={event.id} ImageUploaded={() => ImageUploaded()} />
       </Modal>
     </Layout>
   );

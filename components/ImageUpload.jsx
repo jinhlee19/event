@@ -1,7 +1,7 @@
 import { API_URL } from "@/config/index";
 import { useState } from "react";
 
-export default function ImageUpload({ evtId, imageUploaded }) {
+export default function ImageUpload({ evtId, ImageUploaded }) {
   const [image, setImage] = useState(null);
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,12 +16,12 @@ export default function ImageUpload({ evtId, imageUploaded }) {
       body: formData,
     });
     if (res.ok) {
-      imageUploaded();
+      await ImageUploaded();
     }
   };
   const handleFileChange = (e) => {
     setImage(e.target.files[0]);
-    console.log(e.target.files[0]);
+    // console.log(e.target.files[0]);
   };
   return (
     // <div className=" items-center">
