@@ -1,7 +1,10 @@
 import Layout from "@/components/Layout";
+import Modal from "@/components/Modal";
 import { API_URL } from "@/config/index";
+import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { IoImageOutline } from "react-icons/io5";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -30,6 +33,15 @@ export default function EditEventPage({ event }) {
     slug: slug,
     image: image,
   });
+
+  const [imagePreview, setImagePreview] = useState(
+    image.data ? image.data.attributes.formats.thumbnail.url : null
+  );
+  useEffect(() => {}, [imagePreview]);
+
+  // * 모달
+  const [showModal, setShowModal] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     // console.log("object");
@@ -162,7 +174,27 @@ export default function EditEventPage({ event }) {
           </div>
           <input type="submit" value="업데이트" className="btn" />
         </form>
+        <h2>Event Images</h2>
+        {imagePreview ? (
+          <Image src={imagePreview} height={100} width={170} alt="" />
+        ) : (
+          <div>
+            <p>No Image uploaded</p>
+          </div>
+        )}
+        <div>
+          <button
+            className="btn flex justify-center items-center space-x-2"
+            onClick={() => setShowModal(true)}
+          >
+            <IoImageOutline className="w-6 h-6" />
+            <span className="px-2"> 이미지 추가하기</span>
+          </button>
+        </div>
       </div>
+      <Modal show={showModal} onClose={() => setShowModal(false)}>
+        <h1>Modal Upload</h1>
+      </Modal>
     </Layout>
   );
 }
