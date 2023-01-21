@@ -1,5 +1,5 @@
+import { API_URL } from "@/config/index";
 import { useState } from "react";
-import { API_URL } from "../config";
 
 export default function ImageUpload({ evtId, imageUploaded }) {
   const [image, setImage] = useState(null);
@@ -7,7 +7,7 @@ export default function ImageUpload({ evtId, imageUploaded }) {
     e.preventDefault();
     const formData = new FormData();
     formData.append("files", image); // 이대로 올리면 그냥 미디어 라이브러리에 업로드되고 각 이벤트에 연결되지 않는다.
-    formData.append("ref", "events"); // 연결되는 collection
+    formData.append("ref", "api::event.event"); // 연결되는 collection
     formData.append("refId", evtId); // 연결되는 이벤트 id
     formData.append("field", "image"); // 연결되는 collection
 
@@ -21,7 +21,7 @@ export default function ImageUpload({ evtId, imageUploaded }) {
   };
   const handleFileChange = (e) => {
     setImage(e.target.files[0]);
-    // console.log(e.target.file[0]);
+    console.log(e.target.files[0]);
   };
   return (
     // <div className=" items-center">
