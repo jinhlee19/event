@@ -27,7 +27,11 @@ export default function EventPage({ event }) {
       <ToastContainer />
       <section className="flex flex-col justify-center items-center space-y-12 px-16">
         <Image
-          src={image.data.attributes.formats.medium.url}
+          src={
+            image.data
+              ? image.data.attributes.formats.medium.url
+              : "/asset/image/sample/sample10.jpg"
+          }
           alt=""
           width={600}
           height={800}

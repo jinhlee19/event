@@ -10,7 +10,11 @@ export default function EventItem({ event }) {
         <figure className="w-72  relative mb-4 ">
           <div className="">
             <Image
-              src={image.data.attributes.formats.medium.url}
+              src={
+                image.data
+                  ? image.data.attributes.formats.medium.url
+                  : "/asset/image/sample/sample10.jpg"
+              }
               width={300}
               height={400}
               // layout="fill"
