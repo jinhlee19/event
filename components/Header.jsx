@@ -50,6 +50,11 @@ export default function Header() {
               </Link>
             </li>
             <li className="hidden xl:flex btn px-6 justify-center dark:bg-white dark:text-primary-darker font-semibold bg-primary-darker text-white">
+              <Link href="/account/login">
+                <a>로그인</a>
+              </Link>
+            </li>
+            <li className="hidden xl:flex btn px-6 justify-center dark:bg-white dark:text-primary-darker font-semibold bg-primary-darker text-white">
               <Link href="/events/add">
                 <a>이벤트 주최하기</a>
               </Link>
