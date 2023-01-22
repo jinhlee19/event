@@ -14,7 +14,7 @@ export default function LoginPage() {
   };
 
   return (
-    <Layout className="account flex flex-col justify-center ">
+    <Layout className="account flex flex-col justify-center items-center ">
       <div className="grid-mobile  mx-auto flex w-full max-w-screen-xs justify-center px-4">
         <div className="container--lg border-gray-1 flex w-full flex-col justify-center space-y-1  text-center mb-8 px-4 pt-12 pb-6 lg:mb-10 lg:px-10 lg:pb-12">
           <form className="px-12" onSubmit={onSubmit}>
