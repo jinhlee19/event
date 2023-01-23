@@ -2,7 +2,7 @@ import ImageUpload from "@/components/ImageUpload";
 import Layout from "@/components/Layout";
 import Modal from "@/components/Modal";
 import { API_URL } from "@/config/index";
-import { formatDateForInput } from "@/utils/formatDate";
+import { formatDate } from "@/utils/formatDate";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -29,7 +29,7 @@ export default function EditEventPage({ event }) {
     title: title,
     address: address,
     venue: venue,
-    date: formatDateForInput(event.date),
+    date: formatDate(date),
     time: time,
     organizer: organizer,
     description: description,
@@ -58,6 +58,7 @@ export default function EditEventPage({ event }) {
     if (hasEmptyFields) {
       toast.error("정보를 입력해주세요.");
     }
+
     // * 폼 POST
     const res = await fetch(`${API_URL}/api/events/${event.id}`, {
       method: "PUT",
@@ -68,10 +69,11 @@ export default function EditEventPage({ event }) {
     });
     if (!res.ok) {
       toast.error("에러에러에러");
+      console.log(event.id);
     } else {
       const evt = await res.json();
       // console.log(evt);
-      router.push(`/events/${event.data.attributes.slug}`);
+      router.push(`/events/${evt.data.attributes.slug}`);
     }
   };
 

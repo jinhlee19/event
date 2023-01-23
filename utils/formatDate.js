@@ -1,4 +1,4 @@
-export function formatDateForInput(date) {
-  const formatted = new Date(date).toString().slice(0, 10);
+export function formatDate(date) {
+  const formatted = new Date(date).toISOString().slice(0, 10);
   return formatted;
 }
