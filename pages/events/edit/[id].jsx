@@ -59,7 +59,7 @@ export default function EditEventPage({ event }) {
       toast.error("정보를 입력해주세요.");
     }
     // * 폼 POST
-    const res = await fetch(`${API_URL}/api/events`, {
+    const res = await fetch(`${API_URL}/api/events/${event.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
