@@ -1,3 +1,4 @@
+import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "next-themes";
 import "../styles/globals.css";
 // function MyApp({ Component, pageProps }) {
@@ -6,9 +7,11 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider attribute="class">
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider attribute="class">
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </AuthProvider>
   );
 }
 

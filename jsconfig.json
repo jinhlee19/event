@@ -5,7 +5,8 @@
       "@/styles/*": ["styles/*"],
       "@/config/*": ["config/*"],
       "@/components/*": ["components/*"],
-      "@/utils/*": ["utils/*"]
+      "@/utils/*": ["utils/*"],
+      "@/context/*": ["context/*"]
     }
   }
 }
