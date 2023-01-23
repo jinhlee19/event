@@ -21,7 +21,7 @@ export default function RegisterPage() {
     e.preventDefault();
     // login({ email, password });
     if (password !== passwordConfirm) {
-      toast.error("Password do not match!");
+      toast.error("비밀번호가 일치하지 않습니다.");
       // console.log("htllo");
     } else {
       console.log({ username, email, password, passwordConfirm });
