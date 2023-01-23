@@ -34,7 +34,7 @@
     @apply text-5xl font-extrabold;
   }
   h2 {
-    @apply text-2xl lg:text-3xl leading-6 font-semibold;
+    @apply text-3xl lg:text-3xl leading-6 font-semibold;
   }
   h3 {
     @apply text-sm uppercase;

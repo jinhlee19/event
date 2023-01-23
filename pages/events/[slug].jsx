@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 export default function EventPage({ event }) {
   const router = useRouter();
