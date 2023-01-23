@@ -12,7 +12,7 @@ export default function ShowcasePage({ events }) {
           {/* <span className="text-red-500 ">and Hell</span>O, World... */}
         </h2>
       </section>
-      <section className="card-container px-16 w-full grid lg:grid-cols-4">
+      <section className="card-container px-16 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {events.length === 0 && <div>No event To Show</div>}
         {events.length != 0 &&
           events.map((evt) => <EventItem key={evt.id} event={evt} />)}

@@ -7,7 +7,7 @@ export default function EventItem({ event }) {
   return (
     <Link href={`/events/${slug}`}>
       <div className="card mb-8 w-72 text-center space-y-4 py-8 cursor-pointer">
-        <figure className="w-72  relative mb-4 ">
+        <figure className="w-72 relative mb-4 ">
           <div className="">
             <Image
               src={
