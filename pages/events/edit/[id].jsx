@@ -71,9 +71,9 @@ export default function EditEventPage({ event }) {
       toast.error("에러에러에러");
       console.log(event.id);
     } else {
-      const evt = await res.json();
+      const event = await res.json();
       // console.log(evt);
-      router.push(`/events/${evt.data.attributes.slug}`);
+      router.push(`/events/${event.data.attributes.slug}`);
     }
   };
 
