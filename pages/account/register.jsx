@@ -35,8 +35,10 @@ export default function RegisterPage() {
         <div className="container--lg border-gray-1 flex w-full flex-col justify-center space-y-1 text-center mb-8 px-4 pt-12 pb-6 lg:mb-10 lg:px-10 lg:pb-12">
           <form className="px-12" onSubmit={handleSubmit}>
             <div className="acct-title space-y-1 mb-7 ">
-              <h2 className="font-bold">로그인</h2>
-              <p className="sm-text-gray">회원 정보를 입력해주세요.</p>
+              <h2 className="font-bold">회원가입</h2>
+              <p className="sm-text-gray">
+                CROSSROAD에 오신 것을 환영합니다!🙆‍♂️
+              </p>
             </div>
             <div className="acct-inputs space-y-2">
               <div className="input-container ">

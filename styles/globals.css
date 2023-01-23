@@ -31,10 +31,10 @@
     @apply font-sans text-text-dark dark:text-text-lighter text-base;
   }
   h1 {
-    @apply text-5xl font-extrabold;
+    @apply text-2xl md:text-3xl lg:text-5xl font-extrabold;
   }
   h2 {
-    @apply text-3xl lg:text-3xl leading-6 font-semibold;
+    @apply text-3xl md:text-3xl leading-6 font-semibold;
   }
   h3 {
     @apply text-sm uppercase;
@@ -50,6 +50,9 @@
   }
 }
 @layer components {
+  .logo {
+    @apply uppercase font-bold text-xl sm:text-2xl md:text-3xl font-sans;
+  }
   .xl-text {
     @apply text-xl;
   }
@@ -88,7 +91,7 @@
     @apply flex space-x-12 uppercase lg-text font-semibold dark:font-medium;
   }
   .subtitle {
-    @apply text-lg uppercase;
+    @apply text-base md:text-lg uppercase;
   }
 
   .input--1 {

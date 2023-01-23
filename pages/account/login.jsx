@@ -1,8 +1,8 @@
 import Layout from "@/components/Layout";
+import AuthContext from "@/context/AuthContext";
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoLogoApple, IoLogoGoogle } from "react-icons/io5";
-// import { toast } from "react-toastify";
 
 export default function LoginPage() {
   // const [formData, setFormData] = useState({ email: "", password: "" });
@@ -16,11 +16,13 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
 
   // toast.error("err");
+  const { login, error } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // login({ email, password });
-    console.log({ email, password });
+    // console.log({ email, password });
+    login({ email, password });
   };
 
   return (

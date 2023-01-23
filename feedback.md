@@ -25,3 +25,6 @@ setImagePreview(data.attributes.image.data.attributes.formats.medium.url);
 ```
 
 `{data}` 로 받아오기 - 아니면 data.data.attributes... 형태로 받아와야함.
+
+react의 createContext, useContext를 사용하는 authProvider사용\*
+레퍼런스 참조\*\*

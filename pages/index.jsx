@@ -5,7 +5,7 @@ import { API_URL } from "@/config/index";
 export default function ShowcasePage({ events }) {
   return (
     <Layout>
-      <section className="flex justify-center items-center pb-12 flex-col space-y-8 h-full">
+      <section className="flex justify-center items-center pb-12 flex-col space-y-4 h-full">
         <p className="subtitle">the best four ever</p>
         <h1>네 사람이 마주하는 공간</h1>
         <h2 className="font-medium uppercase">

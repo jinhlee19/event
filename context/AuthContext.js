@@ -3,7 +3,8 @@ import { createContext, useState } from "react";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
+  // const [user, setUser] = useState({ user: "rafy" });
   const [error, setError] = useState(null);
 
   // Register User
@@ -12,11 +13,12 @@ export const AuthProvider = ({ children }) => {
   };
   // Login User
   const login = async ({ email: identifier, password }) => {
+    // strapi에서는 identifier로 받아온다.
     console.log({ identifier, password });
   };
   // Logout User
-  const logout = async (user) => {
-    console.log("Check");
+  const logout = async ({ email: identifier, password }) => {
+    console.log({ identifier, password });
   };
 
   //Check if user is logged in
