@@ -28,3 +28,5 @@ setImagePreview(data.attributes.image.data.attributes.formats.medium.url);
 
 react의 createContext, useContext를 사용하는 authProvider사용\*
 레퍼런스 참조\*\*
+
+. toast가 간헐적으로 사용불가?
