@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
       setUser(data.user);
     } else {
       setError(data.message);
-      setError(null);
+      setError(null); // TODO 이걸 왜 해주는거라고?
     }
   };
   // Logout User
