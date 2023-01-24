@@ -15,6 +15,7 @@ export default async (req, res) => {
       }),
     });
     const data = await strapiRes.json();
+    console.log(data.jwt);
     if (strapiRes.ok) {
       // TODO - SET Cookie
       res.status(200).json({ user: data.user });
@@ -22,10 +23,7 @@ export default async (req, res) => {
       //   res.status(data.error.statusCode).json(data.error.message);
       //   res.status(data.statusCode).json({ message: "data.message" });
       // res.status(data.statusCode).json({ message: data.message[0].messages[0].message });
-      res
-        .status(data.error.status)
-        // .json({ message: data.message[0].messages[0].message });
-        .json({ error: data.error.message });
+      res.status(data.error.status).json({ error: data.error.message });
     }
     // console.log(data);
     // res.status(200).json({});

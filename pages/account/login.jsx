@@ -1,8 +1,9 @@
 import Layout from "@/components/Layout";
 import AuthContext from "@/context/AuthContext";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IoLogoApple, IoLogoGoogle } from "react-icons/io5";
+import { toast, ToastContainer } from "react-toastify";
 
 export default function LoginPage() {
   // const [formData, setFormData] = useState({ email: "", password: "" });
@@ -15,18 +16,22 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // toast.error("err");
   const { login, error } = useContext(AuthContext);
-
+  // useEffect(() => error && toast.error);
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+      // console.log(error);
+    }
+  }, [error]);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // login({ email, password });
-    // console.log({ email, password });
     login({ email, password });
   };
 
   return (
     <Layout className="account flex flex-col justify-center items-center ">
+      <ToastContainer />
       <div className="grid-mobile mx-auto flex w-full max-w-screen-xs justify-center px-4">
         <div className="container--lg border-gray-1 flex w-full flex-col justify-center space-y-1 text-center mb-8 px-4 pt-12 pb-6 lg:mb-10 lg:px-10 lg:pb-12">
           <form className="px-12" onSubmit={handleSubmit}>
@@ -99,7 +104,6 @@ export default function LoginPage() {
           </Link>
         </div>
       </div>
-      {/* <ToastContainer /> */}
     </Layout>
   );
 }

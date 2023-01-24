@@ -27,12 +27,12 @@ export const AuthProvider = ({ children }) => {
       }),
     });
     const data = await res.json();
-    console.log(data);
+    console.log("data in authcontext", data);
     if (res.ok) {
       setUser(data.user);
     } else {
-      setError(data.message);
-      setError(null); // TODO 이걸 왜 해주는거라고?
+      setError(data.error);
+      // setError(null); // TODO 이걸 왜 해주는거라고?
     }
   };
   // Logout User
