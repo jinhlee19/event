@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
       }),
     });
     const data = await res.json();
-    console.log("data in authcontext", data);
+    // console.log("data in authcontext", data);
     if (res.ok) {
       setUser(data.user);
     } else {

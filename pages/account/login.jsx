@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
 import { IoLogoApple, IoLogoGoogle } from "react-icons/io5";
 import { toast, ToastContainer } from "react-toastify";
-
 export default function LoginPage() {
   // const [formData, setFormData] = useState({ email: "", password: "" });
   // const { email, password } = formData;
