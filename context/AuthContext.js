@@ -34,14 +34,17 @@ export const AuthProvider = ({ children }) => {
       }),
     });
     const data = await res.json();
-    // console.log("data in authcontext", data);
+    console.log("data in authcontext", data);
+
     if (res.ok) {
-      setUser(data.user);
+      // setUser(data.user);
+      console.log(data.user);
       router.push("/account/dashboard");
     } else {
       setError(data.error);
     }
   };
+
   // Logout User
   const logout = async ({ email: identifier, password }) => {
     console.log({ identifier, password });

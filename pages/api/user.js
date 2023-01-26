@@ -7,15 +7,17 @@ export default async (req, res) => {
       res.status(403).json({ message: "Not Authorized" });
       return;
     }
-    // TODO 이부분 REVIEW. 쿠키 사용 다시보기 37,38
 
-    const { token } = cookie.parse(req.headers.cookie);
+    // TODO 이부분 REVIEW. 쿠키 사용 다시보기 37,38
+    const token = req.headers.cookie.replace("token=", "");
 
     const strapiRes = await fetch(`${API_URL}/api/users/me`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
+
     const user = await strapiRes.json();
+    console.log("api_user_me_data", user);
 
     if (strapiRes.ok) {
       res.status(200).json({ user });
