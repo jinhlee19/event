@@ -22,7 +22,7 @@ export default async (req, res) => {
     if (strapiRes.ok) {
       res.status(200).json({ user });
     } else {
-      res.status(403).json({ message: "사용자 정보가 없습니다." });
+      res.status(403).json({ message: "사용자 정보가 없습니다" });
     }
   } else {
     res.setHeader("Allow", ["GET"]);
