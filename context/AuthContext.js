@@ -13,13 +13,13 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => checkUserLoggedIn);
   // useEffect(() => {
   //   checkUserLoggedIn();
-  // }, []);
+  // }, [checkUserLoggedIn]);
 
   // Register User
   const register = async (user) => {
     console.log(user);
   };
-  // Login User
+  // Login User // TODO 루프 에러 구간
   const login = async ({ email: identifier, password }) => {
     // strapi에서는 identifier로 받아온다.
     // console.log({ identifier, password });
@@ -34,11 +34,11 @@ export const AuthProvider = ({ children }) => {
       }),
     });
     const data = await res.json();
-    console.log("data in authcontext", data);
+    // console.log("data in authcontext", data);
 
     if (res.ok) {
-      // setUser(data.user);
-      console.log(data.user);
+      setUser(data.user);
+      // console.log(data.user);
       router.push("/account/dashboard");
     } else {
       setError(data.error);
@@ -46,8 +46,15 @@ export const AuthProvider = ({ children }) => {
   };
 
   // Logout User
-  const logout = async ({ email: identifier, password }) => {
-    console.log({ identifier, password });
+  const logout = async (user) => {
+    const res = await fetch(`${NEXT_URL}/api/logout`, {
+      method: "POST",
+    });
+
+    if (res.ok) {
+      setUser(null);
+      router.push("/");
+    }
   };
 
   //Check if user is logged in
@@ -57,7 +64,6 @@ export const AuthProvider = ({ children }) => {
 
     if (res.ok) {
       setUser(data.user);
-      router.push("/account/dashboard");
     } else {
       setUser(null);
     }

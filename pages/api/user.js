@@ -1,6 +1,7 @@
-/* eslint-disable import/no-anonymous-default-export */
 const { API_URL } = require("@/config/index");
+import cookie from "cookie";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
   if (req.method === "GET") {
     if (!req.headers.cookie) {
@@ -8,8 +9,10 @@ export default async (req, res) => {
       return;
     }
 
-    // TODO 이부분 REVIEW. 쿠키 사용 다시보기 37,38
-    const token = req.headers.cookie.replace("token=", "");
+    // TODO 쿠키 사용 다시보기 37,38
+    // const token = req.headers.cookie.replace("token=", "");
+    const { token } = cookie.parse(req.headers.cookie);
+    // console.log(token);
 
     const strapiRes = await fetch(`${API_URL}/api/users/me`, {
       method: "GET",
@@ -17,7 +20,7 @@ export default async (req, res) => {
     });
 
     const user = await strapiRes.json();
-    console.log("api_user_me_data", user);
+    // console.log("api_user_me_data", user);
 
     if (strapiRes.ok) {
       res.status(200).json({ user });

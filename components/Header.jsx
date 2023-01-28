@@ -62,7 +62,7 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className="hidden xl:flex btn px-6 justify-center dark:bg-white dark:text-primary-darker font-semibold bg-primary-darker text-white">
-                  <Link href="/events/dashboard">
+                  <Link href="/account/dashboard">
                     <a>대시보드</a>
                   </Link>
                 </li>

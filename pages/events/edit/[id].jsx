@@ -235,7 +235,7 @@ export async function getServerSideProps({ params: { id }, req }) {
   const json = await res.json();
   const event = await json.data;
 
-  console.log(req.headers.cookie);
+  // console.log(req.headers.cookie);
 
   return {
     props: { event },
