@@ -16,9 +16,27 @@ export const AuthProvider = ({ children }) => {
   // }, [checkUserLoggedIn]);
 
   // Register User
+
   const register = async (user) => {
-    console.log(user);
+    const res = await fetch(`${NEXT_URL}/api/register`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+    const data = await res.json();
+
+    if (res.ok) {
+      setUser(data.user);
+      // console.log(data.user);
+      router.push("/account/dashboard");
+    } else {
+      setError(data.error);
+      // setError(null);
+    }
   };
+
   // Login User
   const login = async ({ email: identifier, password }) => {
     // strapi에서는 identifier로 받아온다.
@@ -42,6 +60,7 @@ export const AuthProvider = ({ children }) => {
       router.push("/account/dashboard");
     } else {
       setError(data.error);
+      setError(null);
     }
   };
 
@@ -66,6 +85,7 @@ export const AuthProvider = ({ children }) => {
       setUser(data.user);
     } else {
       setUser(null);
+      // router.push("/"); //여기에 넣으면 무한루프
     }
   };
 

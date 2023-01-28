@@ -1,6 +1,8 @@
 import Layout from "@/components/Layout";
+import AuthContext from "@/context/AuthContext";
 import Link from "next/link";
-import { useState } from "react";
+import register from "pages/api/register";
+import { useContext, useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
 export default function RegisterPage() {
@@ -16,15 +18,24 @@ export default function RegisterPage() {
   const [passwordConfirm, setPasswordConfirm] = useState("");
 
   // toast.error("err");
-
+  // useEffect(() => error && toast.error(error));
+  const { login, error } = useContext(AuthContext);
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+      // console.log(error);
+    }
+  }, [error]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     // login({ email, password });
     if (password !== passwordConfirm) {
       toast.error("비밀번호가 일치하지 않습니다.");
+      return;
       // console.log("htllo");
     } else {
-      console.log({ username, email, password, passwordConfirm });
+      // console.log({ username, email, password, passwordConfirm });
+      register({ username, email, password }); // authcontext로 register
     }
   };
 
