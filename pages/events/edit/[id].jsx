@@ -2,6 +2,7 @@ import ImageUpload from "@/components/ImageUpload";
 import Layout from "@/components/Layout";
 import Modal from "@/components/Modal";
 import { API_URL } from "@/config/index";
+import { parseCookies } from "@/helpers/index";
 import { formatDate } from "@/utils/formatDate";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -231,13 +232,15 @@ export default function EditEventPage({ event }) {
 }
 
 export async function getServerSideProps({ params: { id }, req }) {
+  const { token } = parseCookies(req);
+
   const res = await fetch(`${API_URL}/api/events/${id}?populate=*`);
   const json = await res.json();
   const event = await json.data;
 
-  // console.log(req.headers.cookie);
+  console.log("log_from_event_id", token);
 
   return {
-    props: { event },
+    props: { event, token },
   };
 }

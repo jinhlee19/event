@@ -12,7 +12,7 @@ export default async (req, res) => {
     // todo 내가만든쿠키
     // const token = req.headers.cookie.replace("token=", "");
     const { token } = cookie.parse(req.headers.cookie);
-    // console.log(token);
+    // console.log(token); // todo: 이곳에서 log를 찍으면 루프가 걸림. why?
 
     const strapiRes = await fetch(`${API_URL}/api/users/me`, {
       method: "GET",
