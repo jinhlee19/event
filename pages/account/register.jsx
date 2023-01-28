@@ -1,7 +1,6 @@
 import Layout from "@/components/Layout";
 import AuthContext from "@/context/AuthContext";
 import Link from "next/link";
-import register from "pages/api/register";
 import { useContext, useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
@@ -19,7 +18,7 @@ export default function RegisterPage() {
 
   // toast.error("err");
   // useEffect(() => error && toast.error(error));
-  const { login, error } = useContext(AuthContext);
+  const { register, error } = useContext(AuthContext);
   useEffect(() => {
     if (error) {
       toast.error(error);
