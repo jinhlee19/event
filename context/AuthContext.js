@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (user) => {
     console.log(user);
   };
-  // Login User // TODO 루프 에러 구간
+  // Login User
   const login = async ({ email: identifier, password }) => {
     // strapi에서는 identifier로 받아온다.
     // console.log({ identifier, password });
@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
       }),
     });
     const data = await res.json();
-    // console.log("data in authcontext", data);
+    console.log("data in authcontext", data);
 
     if (res.ok) {
       setUser(data.user);

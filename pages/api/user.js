@@ -9,7 +9,7 @@ export default async (req, res) => {
       return;
     }
 
-    // TODO 쿠키 사용 다시보기 37,38
+    // todo 내가만든쿠키
     // const token = req.headers.cookie.replace("token=", "");
     const { token } = cookie.parse(req.headers.cookie);
     // console.log(token);
