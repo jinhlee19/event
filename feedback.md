@@ -30,3 +30,5 @@ react의 createContext, useContext를 사용하는 authProvider사용\*
 레퍼런스 참조\*\*
 
 . toast가 간헐적으로 사용불가?
+
+Theme provider (https://dev.to/rashidalikalwar/how-to-add-dark-mode-in-nextjs-application-using-tailwind-css-49bg)
