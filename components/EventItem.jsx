@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-
 export default function EventItem({ event }) {
   const { title, image, slug, time, date, category } = event.attributes;
 
