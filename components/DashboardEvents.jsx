@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function DashboardEvents({ evt }) {
+export default function DashboardEvents({ evt, handleDelete }) {
   return (
     <div className="flex items-center justify-between">
       <h3>
@@ -10,9 +10,9 @@ export default function DashboardEvents({ evt }) {
       </h3>
       <div className="text-2xl uppercase space-x-9">
         <Link href={`/events/edit/${evt.id}`}>편집</Link>
-        <Link href="#" className="" onClick={() => deleteEvent(evt.id)}>
+        <a href="#" className="" onClick={() => handleDelete(evt.id)}>
           삭제
-        </Link>
+        </a>
       </div>
     </div>
   );

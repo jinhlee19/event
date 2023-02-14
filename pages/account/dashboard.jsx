@@ -7,18 +7,8 @@ export default function DashboardPage({ events }) {
   // console.log(events);
   // todo check 왜 자꾸 두번씩...?
 
-  const deleteEvent = async (e) => {
-    if (confirm("정말 삭제하시겠습니까?")) {
-      const res = await fetch(`${API_URL}/api/events/${event.id}`, {
-        method: "DELETE",
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        toast.error("data.message");
-      } else {
-        router.push("/events");
-      }
-    }
+  const deleteEvent = (id) => {
+    console.log(id);
   };
   return (
     <Layout title="대시보드">
@@ -32,7 +22,11 @@ export default function DashboardPage({ events }) {
         <hr className="border border-gray-400" />
         <div className="space-y-6">
           {events.map((evt) => (
-            <DashboardEvents key={evt.id} evt={evt} />
+            <DashboardEvents
+              key={evt.id}
+              evt={evt}
+              handleDelete={deleteEvent}
+            />
           ))}
         </div>
       </div>
