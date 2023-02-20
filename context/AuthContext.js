@@ -10,7 +10,12 @@ export const AuthProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const router = useRouter();
 
-  useEffect(() => checkUserLoggedIn);
+  useEffect(() => checkUserLoggedIn, []);
+  // useEffect(() => {
+  //   if (user == undefined && user == null) {
+  //     checkUserLoggedIn();
+  //   }
+  // });
   // useEffect(() => {
   //   checkUserLoggedIn();
   // }, [checkUserLoggedIn]);
