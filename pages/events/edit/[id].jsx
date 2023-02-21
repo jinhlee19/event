@@ -70,7 +70,7 @@ export default function EditEventPage({ event }) {
     });
     if (!res.ok) {
       toast.error("에러에러에러");
-      console.log(event.id);
+      // console.log(event.id);
     } else {
       const event = await res.json();
       // console.log(evt);

@@ -10,12 +10,12 @@ export const AuthProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const router = useRouter();
 
-  useEffect(() => checkUserLoggedIn, []);
-  // useEffect(() => {
-  //   if (user == undefined && user == null) {
-  //     checkUserLoggedIn();
-  //   }
-  // });
+  // useEffect(() => checkUserLoggedIn, []);
+  useEffect(() => {
+    if (user == undefined && user == null) {
+      checkUserLoggedIn();
+    }
+  });
   // useEffect(() => {
   //   checkUserLoggedIn();
   // }, [checkUserLoggedIn]);
@@ -85,7 +85,6 @@ export const AuthProvider = ({ children }) => {
   const checkUserLoggedIn = async (user) => {
     const res = await fetch(`${NEXT_URL}/api/user`);
     const data = await res.json();
-
     if (res.ok) {
       setUser(data.user);
     } else {
