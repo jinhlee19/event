@@ -238,7 +238,7 @@ export async function getServerSideProps({ params: { id }, req }) {
   const json = await res.json();
   const event = await json.data;
 
-  console.log("log_from_event_id", token);
+  // console.log("log_from_event_id", token);
 
   return {
     props: { event, token },
